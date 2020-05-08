@@ -241,3 +241,5 @@ openpgp.util.print_debug_hexstr_dump("");
 openpgp.util.shiftRight(new Uint8Array([1, 0]), 1);
 openpgp.util.str_to_Uint8Array("");
 openpgp.util.Uint8Array_to_str(openpgp.util.str_to_Uint8Array(""));
+
+new openpgp.wkd.WKD().lookup({ email: 'test-wkd@metacode.biz', rawBytes: true });

@@ -7,6 +7,7 @@
 //                 Eric Camellini <https://github.com/ecamellini>
 //                 SardineFish <https://github.com/SardineFish>
 //                 Ryo Ota <https://github.com/nwtgck>
+//                 Wiktor Kwapisiewicz <https://metacode.biz/@wiktor>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.2
 import BN = require("bn.js");
@@ -4609,7 +4610,7 @@ export namespace wkd {
          * @param options.rawBytes Returns Uint8Array instead of parsed key.
          * @returns The public key.
          */
-        lookup(): Promise<Uint8Array | { keys: Array<key.Key>, err: Array<Error> | null }>;
+        lookup(options: { email: string; rawBytes?: boolean; }): Promise<Uint8Array | { keys: Array<key.Key>, err: Array<Error> | null }>;
     }
 }
 
@@ -4905,7 +4906,7 @@ export interface EncryptResult {
 /**
  * Encrypts message text/data with public keys, passwords or both at once. At least either public keys or passwords
  * must be specified. If private keys are specified, those will be used to sign the message.
- * @param options 
+ * @param options
  * @returns Object containing encrypted (and optionally signed) message in the form:
  *          {
  *          data: string|ReadableStream<String>|NodeStream, (if `armor` was true, the default)
